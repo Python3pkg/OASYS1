@@ -940,8 +940,8 @@ class OASYSMainWindow(canvasmain.CanvasMainWindow):
 
 
             except Exception as exception:
-                print("Error in creating Customized Menu: " + str(menu_instance))
-                print(str(exception.args[0]))
+                print(("Error in creating Customized Menu: " + str(menu_instance)))
+                print((str(exception.args[0])))
                 continue
 
     def open_addons(self):

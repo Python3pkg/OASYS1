@@ -1,4 +1,4 @@
-from __future__ import print_function
+
 
 import sys
 import os
@@ -289,7 +289,7 @@ class AddonManagerWidget(QWidget):
             return -1
 
     def __data_changed(self, topleft, bottomright):
-        rows = range(topleft.row(), bottomright.row() + 1)
+        rows = list(range(topleft.row(), bottomright.row() + 1))
         proxy = self.__view.model()
         map_to_source = proxy.mapToSource
 
@@ -589,7 +589,7 @@ def installable_items(pypipackages, installed=[]):
                 dists[d.project_name] = d
 
     project_names = unique(
-        itertools.chain(packages.keys(), dists.keys())
+        itertools.chain(list(packages.keys()), list(dists.keys()))
     )
 
     items = []

@@ -32,4 +32,4 @@ class DataExchangeObject(object):
         return v_get_content(content_keys)
 
     def content_keys(self):
-        return self._content.keys()[2:]
+        return list(self._content.keys())[2:]

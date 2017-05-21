@@ -272,8 +272,8 @@ class ElementSequence:
         self.addsyms(1, result)
         #items = sorted(result.items())
 
-        for sym, count in result.items():
-            print (sym, "(" + sym2elt[sym].name + "):", count)
+        for sym, count in list(result.items()):
+            print((sym, "(" + sym2elt[sym].name + "):", count))
 
     def getsyms(self):
         result = {}
@@ -286,7 +286,7 @@ class ElementSequence:
 
         return result
 
-NAME, NUM, LPAREN, RPAREN, EOS = range(5)
+NAME, NUM, LPAREN, RPAREN, EOS = list(range(5))
 import re
 _lexer = re.compile(r"[A-Z][a-z]*|\d+|[()]|<EOS>").match
 del re
